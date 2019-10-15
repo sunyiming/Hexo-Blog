@@ -12,9 +12,9 @@ npm install hexo-renderer-scss --save
 npm install hexo-deployer-git --save
 ```
 ### 你 打 字 不 带 空 格
-Hexo 通常以`.yml`为扩展名的 [YMAL](https://zh.wikipedia.org/wiki/YAML) 文件作为配置文件。键值和数据由冒号及**空格**分开，即`key: value`的形式。许多同学在这个地方除了问题。幸好 VS Code 编辑器有语法高亮，能及时发现问题。
+Hexo 通常以`.yml`为扩展名的 [YMAL](https://zh.wikipedia.org/wiki/YAML) 文件作为配置文件。键值和数据由冒号及**空格**分开，即`key: value`的形式。许多同学在这个地方出了问题。幸好 VS Code 编辑器有语法高亮，能及时发现问题。
 ## 自定义域名与仓库
-Github Pages 默认的创建方式是新建一个`<自定义名称>.github.io`为名的仓库并初始化 Readme.md 文件。当然你可以不按这个格式来。
+Github Pages 默认的创建方式是新建一个`<自定义名称>.github.io`为名的仓库并初始化 README.md 文件。当然你可以不按这个格式来。
 先进入你想配置 Pages 服务的仓库。进入仓库设置（Settings）。找到 GitHub Pages 这一节，在 Source 中选定你想配置 Pages 服务的分支（branch）即可。
 若需[配置自定义域名](https://help.github.com/en/articles/managing-a-custom-domain-for-your-github-pages-site)，在上述配置下面找到 Custom domain，填入你的域名。然后去你的域名提供商或 DNS 服务商那里修改 **CNAME** 记录为`<你的GitHub用户名>.github.io`，或修改 **A** 记录为以下任意IP
 ```
@@ -29,7 +29,7 @@ Travis CI 简单来说就是可以让你只把 Markdown 文件推到 GitHub 上�
 需要注意以下几点：
 1. 一般下载 Hexo 主题的时候都会使用`git clone`命令，这会在目录下产生`.git`这个目录。如果将这个目录上传至 GitHub，会被自动识别为仓库嵌套。这会进一步影响到后面的编译问题（通常编译报错为找不到主题模板）。删除子目录中的`.git`目录，重新上传 GitHub 即可。
 2. 编译时会覆盖掉 GitHub 中的 CNAME 文件导致自定义域名配置错误。在这里非常感谢隔壁技术部 [SpartaEN](https://github.com/SpartaEN) 大佬提供的[解决方案](https://github.com/SpartaEN/hexo-blog-demo/blob/master/.travis.yml)。将`.travis.yml`文件改为以下内容即可：
-```ymal
+```yml
 sudo: false
 language: node_js
 node_js:
