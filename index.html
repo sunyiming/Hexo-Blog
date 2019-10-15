@@ -223,7 +223,7 @@
                 
               
 
-              <time title="创建时间：2019-10-15 15:19:23 / 修改时间：09:53:43" itemprop="dateCreated datePublished" datetime="2019-10-15T15:19:23+00:00">2019-10-15</time>
+              <time title="创建时间：2019-10-15 15:19:23 / 修改时间：09:56:10" itemprop="dateCreated datePublished" datetime="2019-10-15T15:19:23+00:00">2019-10-15</time>
             </span>
           
             
@@ -242,20 +242,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>其实在很早之前用过 Hexo，但之前一直没有成功配置过。这次好不容易成功配置好了。具体的基础操作在这里就不再赘述了。在这里就总结一下配置过程中我和其他同学的问题。<br>##Hexo 配置<br>###插件安装<br>以前遇到过编译生成的 HTML 文件为 0 KB 的问题。可能跟缺少生成插件有关，可通过以下命令安装。</p>
+          <p>其实在很早之前用过 Hexo，但之前一直没有成功配置过。这次好不容易成功配置好了。具体的基础操作在这里就不再赘述了。在这里就总结一下配置过程中我和其他同学的问题。</p>
+<h2 id="Hexo-配置"><a href="#Hexo-配置" class="headerlink" title="Hexo 配置"></a>Hexo 配置</h2><h3 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h3><p>以前遇到过编译生成的 HTML 文件为 0 KB 的问题。可能跟缺少生成插件有关，可通过以下命令安装。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-scss --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
-<p>###你 打 字 不 带 空 格<br>Hexo 通常以<code>.yml</code>为扩展名的 <a href="https://zh.wikipedia.org/wiki/YAML" target="_blank" rel="noopener">YMAL</a> 文件作为配置文件。键值和数据由冒号及<strong>空格</strong>分开，即<code>key: value</code>的形式。许多同学在这个地方除了问题。幸好 VS Code 编辑器有语法高亮，能及时发现问题。<br>##自定义域名与仓库<br>Github Pages 默认的创建方式是新建一个<code>&lt;自定义名称&gt;.github.io</code>为名的仓库并初始化 Readme.md 文件。当然你可以不按这个格式来。<br>先进入你想配置 Pages 服务的仓库。进入仓库设置（Settings）。找到 GitHub Pages 这一节，在 Source 中选定你想配置 Pages 服务的分支（branch）即可。<br>若需<a href="https://help.github.com/en/articles/managing-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener">配置自定义域名</a>，在上述配置下面找到 Custom domain，填入你的域名。然后去你的域名提供商或 DNS 服务商那里修改 <strong>CNAME</strong> 记录为<code>&lt;你的GitHub用户名&gt;.github.io</code>，或修改 <strong>A</strong> 记录为以下任意IP</p>
+<h3 id="你-打-字-不-带-空-格"><a href="#你-打-字-不-带-空-格" class="headerlink" title="你 打 字 不 带 空 格"></a>你 打 字 不 带 空 格</h3><p>Hexo 通常以<code>.yml</code>为扩展名的 <a href="https://zh.wikipedia.org/wiki/YAML" target="_blank" rel="noopener">YMAL</a> 文件作为配置文件。键值和数据由冒号及<strong>空格</strong>分开，即<code>key: value</code>的形式。许多同学在这个地方除了问题。幸好 VS Code 编辑器有语法高亮，能及时发现问题。</p>
+<h2 id="自定义域名与仓库"><a href="#自定义域名与仓库" class="headerlink" title="自定义域名与仓库"></a>自定义域名与仓库</h2><p>Github Pages 默认的创建方式是新建一个<code>&lt;自定义名称&gt;.github.io</code>为名的仓库并初始化 Readme.md 文件。当然你可以不按这个格式来。<br>先进入你想配置 Pages 服务的仓库。进入仓库设置（Settings）。找到 GitHub Pages 这一节，在 Source 中选定你想配置 Pages 服务的分支（branch）即可。<br>若需<a href="https://help.github.com/en/articles/managing-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener">配置自定义域名</a>，在上述配置下面找到 Custom domain，填入你的域名。然后去你的域名提供商或 DNS 服务商那里修改 <strong>CNAME</strong> 记录为<code>&lt;你的GitHub用户名&gt;.github.io</code>，或修改 <strong>A</strong> 记录为以下任意IP</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">185.199.108.153</span><br><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure>
 
-<p>可以顺便把底下的 Enforce HTTPS 打上勾，这样GitHub会通过让老子加密（Let’s Encrypt）自动为你的域名签发 SSL 证书。<br>##使用 Travis CI 持续构建<br>Travis CI 简单来说就是可以让你只把 Markdown 文件推到 GitHub 上，他会自动把你的文章编译为 HTML 文件并部署到 Github Pages 上。我暂时还没弄明白这个比在本地编译完再推送到网站上有什么优点。但 Hexo 官网上都专门有<a href="https://hexo.io/zh-cn/docs/github-pages" target="_blank" rel="noopener">详细教程</a>，所以说可以没事配置上玩玩。<br>需要注意以下几点：</p>
+<p>可以顺便把底下的 Enforce HTTPS 打上勾，这样GitHub会通过让老子加密（Let’s Encrypt）自动为你的域名签发 SSL 证书。</p>
+<h2 id="使用-Travis-CI-持续构建"><a href="#使用-Travis-CI-持续构建" class="headerlink" title="使用 Travis CI 持续构建"></a>使用 Travis CI 持续构建</h2><p>Travis CI 简单来说就是可以让你只把 Markdown 文件推到 GitHub 上，他会自动把你的文章编译为 HTML 文件并部署到 Github Pages 上。我暂时还没弄明白这个比在本地编译完再推送到网站上有什么优点。但 Hexo 官网上都专门有<a href="https://hexo.io/zh-cn/docs/github-pages" target="_blank" rel="noopener">详细教程</a>，所以说可以没事配置上玩玩。<br>需要注意以下几点：</p>
 <ol>
-<li><p>一般下载 Hexo 主题的时候都会使用<code>git clone</code>命令，这会在目录下产生<code>.git</code>这个目录。如果将这个目录上传至 GitHub，会被自动识别为仓库嵌套。这回进一步影响到后面的编译问题（通常编译报错为找不到主题模板）。删除子目录中的<code>.git</code>目录，重新上传 GitHub 即可。</p>
+<li><p>一般下载 Hexo 主题的时候都会使用<code>git clone</code>命令，这会在目录下产生<code>.git</code>这个目录。如果将这个目录上传至 GitHub，会被自动识别为仓库嵌套。这会进一步影响到后面的编译问题（通常编译报错为找不到主题模板）。删除子目录中的<code>.git</code>目录，重新上传 GitHub 即可。</p>
 </li>
 <li><p>编译时会覆盖掉 GitHub 中的 CNAME 文件导致自定义域名配置错误。在这里非常感谢隔壁技术部 <a href="https://github.com/SpartaEN" target="_blank" rel="noopener">SpartaEN</a> 大佬提供的<a href="https://github.com/SpartaEN/hexo-blog-demo/blob/master/.travis.yml" target="_blank" rel="noopener">解决方案</a>。将<code>.travis.yml</code>文件改为以下内容即可：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">sudo: false</span><br><span class="line">language: node_js</span><br><span class="line">node_js:</span><br><span class="line">  - 10 # use nodejs v10 LTS</span><br><span class="line">cache: npm</span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - master # build master branch only</span><br><span class="line">script:</span><br><span class="line">  - hexo generate # generate static files</span><br><span class="line">  # Fix CNAME issue</span><br><span class="line">  # - rm public\CNAME</span><br><span class="line">  - echo &quot;你的域名&quot; &gt;&gt; public\CNAME</span><br><span class="line">deploy:</span><br><span class="line">  provider: pages</span><br><span class="line">  skip-cleanup: true</span><br><span class="line">  github-token: $GH_TOKEN</span><br><span class="line">  keep-history: true</span><br><span class="line">  on:</span><br><span class="line">    branch: master</span><br><span class="line">  local-dir: public</span><br></pre></td></tr></table></figure>
 
-<p>##回滚 Git 版本<br>在使用 Git 时不免会遇到失误的提交，这时需要回滚到以前的版本。</p>
+<h2 id="回滚-Git-版本"><a href="#回滚-Git-版本" class="headerlink" title="回滚 Git 版本"></a>回滚 Git 版本</h2><p>在使用 Git 时不免会遇到失误的提交，这时需要回滚到以前的版本。</p>
 <ol>
 <li>使用<code>git log</code>列出之前的 commit 记录，找到你想回退到的版本，复制下其对应的 hash 代码（就像是<code>f7371d168201b65d68da67d1276c89369fd1fcad</code>一样的乱码）。</li>
 <li>使用<code>git reset --hard 刚才复制的代码</code>回退到之前的版本。</li>
@@ -314,7 +317,7 @@
                 
               
 
-              <time title="创建时间：2019-10-15 09:53:43" itemprop="dateCreated datePublished" datetime="2019-10-15T09:53:43+00:00">2019-10-15</time>
+              <time title="创建时间：2019-10-15 09:56:10" itemprop="dateCreated datePublished" datetime="2019-10-15T09:56:10+00:00">2019-10-15</time>
             </span>
           
 
