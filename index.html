@@ -193,85 +193,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hexo.sunyiming.top/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Steven Sun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello World">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            
-            <a href="/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-10-15 15:19:23" itemprop="dateCreated datePublished" datetime="2019-10-15T15:19:23+00:00">2019-10-15</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-17 13:39:29" itemprop="dateModified" datetime="2019-10-17T13:39:29+00:00">2019-10-17</time>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>This is a demo site for learning Hexo.<br>The default copyright license of the posts is <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener"><strong>CC0</strong></a> (aka “Public Domain” or “No Copyright”)</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-    
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://hexo.sunyiming.top/learn-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -313,7 +234,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-17 13:39:29" itemprop="dateModified" datetime="2019-10-17T13:39:29+00:00">2019-10-17</time>
+                <time title="修改时间：2019-10-17 14:04:24" itemprop="dateModified" datetime="2019-10-17T14:04:24+00:00">2019-10-17</time>
               </span>
             
           
@@ -342,8 +263,8 @@
 <ol>
 <li><p>一般下载 Hexo 主题的时候都会使用<code>git clone</code>命令，这会在目录下产生<code>.git</code>这个目录。如果将这个目录上传至 GitHub，会被自动识别为仓库嵌套。这会进一步影响到后面的编译问题（通常编译报错为找不到主题模板）。删除子目录中的<code>.git</code>目录，重新上传 GitHub 即可。</p>
 </li>
-<li><p>编译时会覆盖掉 GitHub 中的 CNAME 文件导致自定义域名配置错误。在这里非常感谢隔壁技术部 <a href="https://github.com/SpartaEN" target="_blank" rel="noopener">SpartaEN</a> 大佬提供的<a href="https://github.com/SpartaEN/hexo-blog-demo/blob/master/.travis.yml" target="_blank" rel="noopener">解决方案</a>。将<code>.travis.yml</code>文件改为以下内容即可：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sudo:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">node_js</span></span><br><span class="line"><span class="attr">node_js:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="number">10</span> <span class="comment"># use nodejs v10 LTS</span></span><br><span class="line"><span class="attr">cache:</span> <span class="string">npm</span></span><br><span class="line"><span class="attr">branches:</span></span><br><span class="line"><span class="attr">  only:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">master</span> <span class="comment"># build master branch only</span></span><br><span class="line"><span class="attr">script:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">hexo</span> <span class="string">generate</span> <span class="comment"># generate static files</span></span><br><span class="line">  <span class="comment"># Fix CNAME issue</span></span><br><span class="line">  <span class="comment"># - rm public\CNAME</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">echo</span> <span class="string">"你的域名"</span> <span class="string">&gt;&gt;</span> <span class="string">public\CNAME</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  provider:</span> <span class="string">pages</span></span><br><span class="line"><span class="attr">  skip-cleanup:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  github-token:</span> <span class="string">$GH_TOKEN</span></span><br><span class="line"><span class="attr">  keep-history:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  on:</span></span><br><span class="line"><span class="attr">    branch:</span> <span class="string">master</span></span><br><span class="line"><span class="attr">  local-dir:</span> <span class="string">public</span></span><br></pre></td></tr></table></figure>
+<li><p>编译时会覆盖掉 GitHub 中的 CNAME 文件导致自定义域名配置错误。按照 Travis CI 的<a href="https://docs.travis-ci.com/user/deployment/pages/" target="_blank" rel="noopener">官网提示</a>。需要添加<code>fqdn</code>属性。即把<code>.travis.yml</code>文件改为以下内容即可：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sudo:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">node_js</span></span><br><span class="line"><span class="attr">node_js:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="number">10</span> <span class="comment"># use nodejs v10 LTS</span></span><br><span class="line"><span class="attr">cache:</span> <span class="string">npm</span></span><br><span class="line"><span class="attr">branches:</span></span><br><span class="line"><span class="attr">  only:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">master</span> <span class="comment"># build master branch only</span></span><br><span class="line"><span class="attr">script:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">hexo</span> <span class="string">generate</span> <span class="comment"># generate static files</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  provider:</span> <span class="string">pages</span></span><br><span class="line"><span class="attr">  skip-cleanup:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  github-token:</span> <span class="string">$GH_TOKEN</span></span><br><span class="line"><span class="attr">  keep-history:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  on:</span></span><br><span class="line"><span class="attr">    branch:</span> <span class="string">master</span></span><br><span class="line"><span class="attr">  local-dir:</span> <span class="string">public</span></span><br><span class="line">  <span class="comment">#添加下面这一行</span></span><br><span class="line"><span class="attr">  fqdn:</span> <span class="string">你的域名</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="回滚-Git-版本"><a href="#回滚-Git-版本" class="headerlink" title="回滚 Git 版本"></a>回滚 Git 版本</h2><p>在使用 Git 时不免会遇到失误的提交，这时需要回滚到以前的版本。</p>
 <ol>
@@ -353,6 +274,85 @@
 </ol>
 </li>
 </ol>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hexo.sunyiming.top/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Steven Sun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-15 00:00:00" itemprop="dateCreated datePublished" datetime="2019-10-15T00:00:00+00:00">2019-10-15</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-17 14:04:24" itemprop="dateModified" datetime="2019-10-17T14:04:24+00:00">2019-10-17</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>This is a demo site for learning Hexo.<br>The default copyright license of the posts is <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener"><strong>CC0</strong></a> (aka “Public Domain” or “No Copyright”)</p>
 
         
       
