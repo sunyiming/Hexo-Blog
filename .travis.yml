@@ -8,7 +8,7 @@ branches:
     - master # build master branch only
 script:
   - hexo generate # generate static files
-  - echo "hexo.sunyiming.top" >> public\CNAME
+  - echo "hexo.sunyiming.top" > public\CNAME
 deploy:
   provider: pages
   skip-cleanup: true
