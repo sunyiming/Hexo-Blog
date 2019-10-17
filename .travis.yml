@@ -8,8 +8,6 @@ branches:
     - master # build master branch only
 script:
   - hexo generate # generate static files
-  - touch public\CNAME
-  - echo "hexo.sunyiming.top" > public\CNAME
 deploy:
   provider: pages
   skip-cleanup: true
@@ -18,3 +16,4 @@ deploy:
   on:
     branch: master
   local-dir: public
+  fqdn: hexo.sunyiming.top
